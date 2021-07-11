@@ -1,10 +1,10 @@
 import scrapy
-from stockCrawler.items import StockcrawlerItem
+from stockCrawler.items import FinancialReportItem
 from utils.formatting import normalize, num
 
 
-class StockCrawlerSpider(scrapy.Spider):
-    name = 'stockCrawler'
+class FinancialReportSpider(scrapy.Spider):
+    name = 'financialReportCrawler'
     allowed_domains = ['mops.twse.com.tw']
 
     code = '1455'
@@ -13,10 +13,8 @@ class StockCrawlerSpider(scrapy.Spider):
     url = f'https://mops.twse.com.tw/server-java/t164sb01?step=1&CO_ID={code}&SYEAR={year}&SSEASON={season}&REPORT_ID=C'
     start_urls = [url]
 
-    items = StockcrawlerItem()
-
     def parse(self, response):  # crawler logic
-        items = StockcrawlerItem()
+        items = FinancialReportItem()
 
         title = response.xpath("//div[@class='header']/div/span/text()").get()
 

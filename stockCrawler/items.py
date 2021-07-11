@@ -6,7 +6,7 @@
 import scrapy
 
 
-class StockcrawlerItem(scrapy.Item):
+class FinancialReportItem(scrapy.Item):
     title = scrapy.Field()
     year = scrapy.Field()
     season = scrapy.Field()
@@ -17,5 +17,11 @@ class StockcrawlerItem(scrapy.Item):
     balance = scrapy.Field()
     income = scrapy.Field()
     cash = scrapy.Field()
+
+    pass
+
+
+class StockSymbolItem(scrapy.Item):
+    sheet = scrapy.Field()
 
     pass

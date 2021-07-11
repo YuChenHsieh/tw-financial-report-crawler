@@ -8,6 +8,11 @@ from db.client import models
 from itemadapter import ItemAdapter
 
 
-class StockcrawlerPipeline:
+class FinancialReportPipeline:
+    def process_item(self, item, spider):
+        return item
+
+
+class StockSymbolPipeline:
     def process_item(self, item, spider):
         return item

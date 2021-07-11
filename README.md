@@ -9,7 +9,10 @@ source ./stock-crawler/bin/activate
 ### Quick Start
 ```
 pip -r requirements.txt
-scrapy crawl stockCrawler -o test.json -t json -s FEED_EXPORT_ENCODING=utf-8
+# start stockSymbolCrawler
+scrapy crawl stockSymbolCrawler -o test.json -t json -s FEED_EXPORT_ENCODING=utf-8
+# start financialReportCrawler
+scrapy crawl financialReportCrawler -o test.json -t json -s FEED_EXPORT_ENCODING=utf-8
 ```
 
 ### Setup DB (not yet)
